@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 import Navigation from './Navigation';
 import Hero from './Hero';
 import './App.css';
-// import emailjs from 'emailjs-com';
+import { FaGithub } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 
@@ -124,7 +124,169 @@ function App() {
 
                 <section id="projects" className="section">
                     <h2>Projects</h2>
-                    {/* Add your content here */}
+                    <div className="projects-container">
+                        <div className="project-card">
+                            <h3>C++ Wordsearch Board Generation</h3>
+                            <div className="project-organization">Personal</div>
+                            <p>Developed a recursive algorithm to generate possible word search boards of a given size
+                                using a specified set of words. This involved implementing variable-sized matrices to
+                                store boards and creating methods to populate and validate each board. The project required
+                                efficient backtracking techniques to ensure correctness.
+                            </p>
+                            <div className="tech-tags">
+                                <span>C++</span>
+                                <span>Algorithms</span>
+                                <span>Backtracking</span>
+                            </div>
+                            <a
+                                href="https://github.com/benfawthrop/data_structures/tree/main/hw/hw_06"
+                                className="github-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub />
+                            </a>
+                        </div>
+
+                        <div className="project-card">
+                            <h3>Battery Model and LapSim</h3>
+                            <div className="project-organization">Rensselaer Center for Open Source - Rensselaer Motorsport (RM)</div>
+                            <p>Developed a Python-based simulation of a battery system for an electric vehicle, focusing
+                                on performance optimization and energy management. The project involved modeling
+                                battery chemistry and thermal dynamics, and implementing algorithms to optimize
+                                energy distribution across multiple motors.
+                            </p>
+                            <div className="tech-tags">
+                                <span>Python</span>
+                                <span>PyBaMM API</span>
+                                <span>Data Visualization</span>
+                                <span>Thermal Modeling</span>
+                            </div>
+                            <a
+                                href="https://github.com/RensselaerMotorsport"
+                                className="github-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub />
+                            </a>
+                        </div>
+
+                        <div className="project-card">
+                            <h3>Edureka Event Management Platform</h3>
+                            <div className="project-organization">Rensselaer Center for Open Source - President's Office</div>
+                            <p>Contributed to the development of Edureka, the ground truth event management system for RPI, designed for use by the President’s
+                                Office and campus-wide display tools like Concerto. Built Express.js backend routes to serve weekly event data to Concerto and the
+                                public site, as well as admin-specific routes for event editing and archiving. On the frontend, developed the admin-facing Edit Event
+                                page using React, TypeScript, and Bootstrap, enabling full CRUD functionality for managing events. Integrated data from multiple
+                                existing platforms (EventHub, StudyCompass) into a unified MongoDB-backed database to centralize event visibility across campus.
+                            </p>
+                            <div className="tech-tags">
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>Express.js</span>
+                                <span>MongoDB</span>
+                                <span>Bootstrap</span>
+                            </div>
+                            <a
+                                href="https://github.com/EdurekaRPI"
+                                className="github-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub />
+                            </a>
+                        </div>
+
+                        <div className="project-card">
+                            <h3>C Wordle Server with TCP Socket Connections</h3>
+                            <div className="project-organization">Personal</div>
+                            <p>Developed a Wordle game server in C, utilizing TCP socket connections to allow multiple users to connect and play
+                                simultaneously from remote locations. The project involved implementing multi-threading to handle concurrent client
+                                connections and managing game states for each player session. Designed the server to provide real-time feedback to players,
+                                ensuring smooth gameplay and correct word validation.
+                            </p>
+                            <div className="tech-tags">
+                                <span>C</span>
+                                <span>TCP/IP</span>
+                                <span>Multithreading</span>
+                                <span>Network Programming</span>
+                            </div>
+                            <a
+                                href="https://github.com/benfawthrop/OpSys/tree/main/Homeworks/hw3"
+                                className="github-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub />
+                            </a>
+                        </div>
+                        <div className="project-card">
+                            <h3>Object Detection System with Region Proposals</h3>
+                            <div className="project-organization">Computational Vision Course Project</div>
+                            <p>
+                                Developed an end-to-end object detection system using PyTorch, featuring:
+                                <ul className="project-features">
+                                    <li>Custom region proposal processing pipeline</li>
+                                    <li>Dual-output network architecture (classification + bounding box regression)</li>
+                                    <li>Combined loss function with BCE and MSE components</li>
+                                    <li>Non-maximum suppression implementation</li>
+                                    <li>Mean Average Precision (mAP) evaluation system</li>
+                                </ul>
+                                Achieved robust object detection across 10 classes through careful hyperparameter tuning
+                                and implementation of precision-recall curve analysis. Implemented visualization tools for
+                                bounding box verification and confusion matrix analysis.
+                            </p>
+                            <div className="tech-tags">
+                                <span>PyTorch</span>
+                                <span>ResNet-18</span>
+                                <span>Computer Vision</span>
+                                <span>mAP Evaluation</span>
+                                <span>Jupyter Notebook</span>
+                            </div>
+                            <a
+                                href="https://github.com/benfawthrop/Computer_Vision/tree/main/src/hw5"
+                                className="github-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub />
+                            </a>
+                        </div>
+                        <div className="project-card">
+                            <h3>This Website!</h3>
+                            <div className="project-organization">Personal</div>
+                            <p>
+                                Designed and developed a modern responsive portfolio showcasing technical projects and professional experience.
+                                Key features include:
+                                <ul className="project-features">
+                                    <li>Dynamic project grid with hover animations</li>
+                                    <li>Interactive timeline component for work history</li>
+                                    <li>EmailJS integration for contact form functionality</li>
+                                    <li>Responsive sidebar navigation</li>
+                                    <li>CSS custom properties for theme consistency</li>
+                                </ul>
+                                Built with a focus on performance and accessibility, implementing smooth scroll behavior,
+                                semantic HTML structure, and mobile-first responsive design principles.
+                            </p>
+                            <div className="tech-tags">
+                                <span>React</span>
+                                <span>CSS Modules</span>
+                                <span>EmailJS</span>
+                                <span>React Icons</span>
+                                <span>Responsive Design</span>
+                                <span>HTML</span>
+                            </div>
+                            <a
+                                href="https://github.com/benfawthrop/personal_website"
+                                className="github-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub />
+                            </a>
+                        </div>
+                    </div>
                 </section>
 
                 <section id="contact" className="section">

@@ -27,7 +27,7 @@ body {
 }
 
 .sidebar {
-    width: 80px;
+    width: 60px;
     background: #22311d;
     display: flex;
     flex-direction: column;
@@ -64,7 +64,7 @@ body {
 .top-nav {
     position: fixed;
     top: 0;
-    left: 80px;
+    left: 60px;
     right: 0;
     background: whitesmoke;
     padding: 20px;
@@ -91,8 +91,8 @@ body {
 }
 
 .content {
-    margin-left: 80px;
-    width: calc(100% - 80px);
+    margin-left: 60px;
+    width: calc(100% - 60px);
     padding: 40px;
     position: relative;
 }
@@ -126,8 +126,8 @@ body {
 .hero {
     transition: opacity 0.01s ease;
     height: 100vh;
-    width: calc(100% - 80px);
-    margin-left: 80px;
+    width: calc(100% - 60px);
+    margin-left: 60px;
     position: relative;
     background-image: url('../../public/images/IMG_6056.jpeg');
     background-size: cover;
@@ -162,8 +162,8 @@ body {
 
 .hero-container {
     height: 100vh;
-    width: calc(100% - 80px);
-    margin-left: 80px;
+    width: calc(100% - 60px);
+    margin-left: 60px;
 }
 
 .hero-content {
@@ -292,7 +292,7 @@ body {
 .timeline-container {
     max-width: 1200px;
     margin: 40px auto 0;
-    padding: 0 20px;
+    padding: 0 20px 20px;
 }
 
 .timeline {
@@ -535,3 +535,107 @@ body {
     80% { transform: scale(1.2); }
     100% { transform: scale(1); }
 }
+
+/* Projects Section */
+.projects-container {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--hover-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+
+.project-organization {
+    color: var(--hover-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.project-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .project-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* GitHub Icon Styling */
+.github-link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+}
+
+.github-link:hover {
+    color: var(--hover-color);
+    transform: scale(1.15);
+}
+
+.project-card {
+    position: relative;
+    padding-bottom: 60px; /* Make space for icon */
+}
+
+.project-features {
+    margin: 15px 0;
+    padding-left: 20px;
+    color: #666;
+}
+
+.project-features li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tech-tags span {
+    background: #f0f0f0;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: var(--hover-color);
+    border: 1px solid #ddd;
+}
+
