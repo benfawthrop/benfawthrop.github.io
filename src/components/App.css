@@ -639,3 +639,150 @@ body {
     border: 1px solid #ddd;
 }
 
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+}
+
+.hamburger-btn {
+    background: #22311d;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 2001;
+}
+
+.mobile-nav-container {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 1999;
+    overflow-y: auto;
+}
+
+.mobile-nav-container.open {
+    left: 0;
+}
+
+.mobile-nav-content {
+    padding: 80px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mobile-nav-item {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.mobile-nav-item:hover {
+    background-color: #f0f0f0;
+}
+
+.mobile-social-links {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .sidebar,
+    .top-nav {
+        display: none;
+    }
+
+    .content,
+    .hero {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .hero {
+        background-position: center 30%;
+    }
+
+    .hero-overlay {
+        padding-top: 30vh;
+    }
+
+    .hero-name {
+        font-size: 3rem;
+    }
+
+    .section {
+        padding: 20px 0;
+        min-height: auto;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    /* Add backdrop when menu is open */
+    .mobile-nav-container.open + .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1998;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-name {
+        font-size: 3.5rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
+

@@ -10,7 +10,7 @@ const Navigation = ( ) => {
     };
 
     return (
-        <nav className="top-nav">
+        <nav className="top-nav desktop-only">
             <button onClick={() => scrollToSection('about')}>About</button>
             <button onClick={() => scrollToSection('experience')}>Experience</button>
             <button onClick={() => scrollToSection('projects')}>Projects</button>

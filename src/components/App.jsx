@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import Sidebar from './Sidebar';
 import Navigation from './Navigation';
 import Hero from './Hero';
+import HamburgerMenu from './HamburgerMobile';
 import './App.css';
 import { FaGithub } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
@@ -38,6 +39,8 @@ function App() {
                 <span className="check-icon">✓</span>
                 Message sent successfully!
             </div>
+            <HamburgerMenu />
+            <div className="mobile-menu-backdrop"></div>
 
             <Sidebar />
             <Navigation />
@@ -111,10 +114,23 @@ function App() {
                                 <div className="timeline-content">
                                     <h3>Tennis Coach</h3>
                                     <div className="timeline-company">Tri-City Fitness</div>
-                                    <div className="timeline-date">2024-Present</div>
+                                    <div className="timeline-date">2024-2025</div>
                                     <p>Delivered private and group lessons to juniors and adults, focusing on
                                         fundamental consistency. Collaborated on camp curriculum development,
                                         incorporating fitness drills and peer analysis sessions
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="timeline-item">
+                                <div className="timeline-content">
+                                    <h3>Food Runner/Expo</h3>
+                                    <div className="timeline-company">Brown's Brewing Company</div>
+                                    <div className="timeline-date">2025</div>
+                                    <p>Assisted in high-volume food service by coordinating timely delivery of
+                                        dishes between kitchen and dining areas. Maintained quality control and
+                                        presentation standards while communicating closely with chefs and servers
+                                        to ensure seamless guest experience.
                                     </p>
                                 </div>
                             </div>
