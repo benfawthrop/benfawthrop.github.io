@@ -61,13 +61,53 @@ body {
     color: var(--hover-color);
 }
 
+/*.top-nav {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 60px;*/
+/*    right: 0;*/
+/*    background: whitesmoke;*/
+/*    padding: 20px;*/
+/*    box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
+/*    display: flex;*/
+/*    gap: 20px;*/
+/*    justify-content: flex-end;*/
+/*    z-index: 1000;*/
+/*}*/
+
+/*.top-nav button {*/
+/*    background: none;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    font-size: 16px;*/
+/*    font-weight: 550;*/
+/*    padding: 5px 10px;*/
+/*    border-radius: 5px;*/
+/*    border-bottom: 2px solid transparent;*/
+/*    color: #2c3e50;*/
+/*    transition: color 0.2s;*/
+/*    !*transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;*!*/
+/*}*/
+
+/*.top-nav button:hover {*/
+/*    color: var(--hover-color);*/
+/*}*/
+
+/*.top-nav button.active {*/
+/*    background-color: #3f5a361a;*/
+/*    color: var(--hover-color);*/
+/*    padding: 5px 10px;*/
+/*    border-radius: 5px;*/
+/*    border-bottom: 2px solid var(--hover-color);*/
+/*}*/
+
 .top-nav {
     position: fixed;
     top: 0;
     left: 60px;
     right: 0;
     background: whitesmoke;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
     gap: 20px;
@@ -81,14 +121,29 @@ body {
     cursor: pointer;
     font-size: 16px;
     font-weight: 550;
-    padding: 5px 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
     color: #2c3e50;
-    transition: color 0.2s;
+    position: relative;
+    z-index: 1;
 }
 
 .top-nav button:hover {
     color: var(--hover-color);
 }
+
+.top-nav .highlight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: calc(100% - 15px); /* same height as buttons minus breathing space */
+    background-color: #3f5a361a; /* your original box color */
+    border-radius: 5px;
+    border-bottom: 2px solid var(--hover-color);
+    transition: all 0.3s ease; /* smooth slide + resize */
+    z-index: 0;
+}
+
 
 .content {
     margin-left: 60px;
@@ -650,7 +705,7 @@ body {
 
 .hamburger-btn {
     background: #22311d;
-    color: white;
+    color: #e8ebe0;
     border: none;
     width: 50px;
     height: 50px;

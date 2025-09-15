@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import Navigation from './Navigation';
 import Hero from './Hero';
@@ -11,6 +11,7 @@ import emailjs from '@emailjs/browser';
 function App() {
     const form = useRef();
     const [showSuccess, setShowSuccess] = useState(false);
+    const [activeSection, setActiveSection] = useState("about");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,6 +33,31 @@ function App() {
             });
     };
 
+    useEffect(() => {
+        const hero = document.querySelector(".hero");
+        const sections = document.querySelectorAll("section");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains("hero")) {
+                            setActiveSection(null); // no highlight on hero
+                        } else {
+                            setActiveSection(entry.target.id);
+                        }
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        if (hero) observer.observe(hero);
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
 
         <div className="app">
@@ -43,7 +69,7 @@ function App() {
             <div className="mobile-menu-backdrop"></div>
 
             <Sidebar />
-            <Navigation />
+            <Navigation activeSection={activeSection} />
             <Hero name="Ben Fawthrop" subtext={"4th Year CS Major @ RPI"} />
 
             <main className="content">
