@@ -61,46 +61,6 @@ body {
     color: var(--hover-color);
 }
 
-/*.top-nav {*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    left: 60px;*/
-/*    right: 0;*/
-/*    background: whitesmoke;*/
-/*    padding: 20px;*/
-/*    box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
-/*    display: flex;*/
-/*    gap: 20px;*/
-/*    justify-content: flex-end;*/
-/*    z-index: 1000;*/
-/*}*/
-
-/*.top-nav button {*/
-/*    background: none;*/
-/*    border: none;*/
-/*    cursor: pointer;*/
-/*    font-size: 16px;*/
-/*    font-weight: 550;*/
-/*    padding: 5px 10px;*/
-/*    border-radius: 5px;*/
-/*    border-bottom: 2px solid transparent;*/
-/*    color: #2c3e50;*/
-/*    transition: color 0.2s;*/
-/*    !*transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;*!*/
-/*}*/
-
-/*.top-nav button:hover {*/
-/*    color: var(--hover-color);*/
-/*}*/
-
-/*.top-nav button.active {*/
-/*    background-color: #3f5a361a;*/
-/*    color: var(--hover-color);*/
-/*    padding: 5px 10px;*/
-/*    border-radius: 5px;*/
-/*    border-bottom: 2px solid var(--hover-color);*/
-/*}*/
-
 .top-nav {
     position: fixed;
     top: 0;
@@ -604,15 +564,28 @@ body {
 .project-card {
     background: white;
     padding: 25px;
+    padding-bottom: 60px;
     border-radius: 8px;
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     border-left: 4px solid var(--hover-color);
+    position: relative;
 }
 
 .project-card:hover {
-    transform: translateY(-5px) scale(1.02);
+    margin-top: -5px;
+    margin-bottom: 5px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.project-card:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: transparent;
 }
 
 .project-card h3 {
@@ -660,11 +633,6 @@ body {
 .github-link:hover {
     color: var(--hover-color);
     transform: scale(1.15);
-}
-
-.project-card {
-    position: relative;
-    padding-bottom: 60px; /* Make space for icon */
 }
 
 .project-features {
@@ -839,5 +807,67 @@ body {
     }
 }
 
+/* Scroll-driven animations for sections */
+.section {
+    animation: section-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
 
+/* Animation for timeline items */
+.timeline-item {
+    animation: item-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
 
+/* Animation for project cards */
+.project-card {
+    animation: item-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+/* Animation for contact form elements */
+.contact-container > * {
+    animation: item-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+/* About section specific animations */
+.about-text, .about-image {
+    animation: item-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+/* Keyframes for fade-in animations */
+@keyframes section-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+@keyframes item-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section,
+    .timeline-item,
+    .project-card,
+    .contact-container > *,
+    .about-text,
+    .about-image {
+        animation: none;
+    }
+}

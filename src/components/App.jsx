@@ -49,7 +49,7 @@ function App() {
                     }
                 });
             },
-            { threshold: 0.3 }
+            { threshold: 0.25 }
         );
 
         if (hero) observer.observe(hero);
@@ -83,7 +83,7 @@ function App() {
                                 My experience spans software development, open-source contributions, and research-driven
                                 engineering projects—from backend API development and frontend interfaces to modeling
                                 battery systems for motorsport simulation. I'm also an active participant in the RPI
-                                community, serving as a captain of the Quadball team and contributing to campus-wide
+                                community, serving as a captain of the RPI Quadball team and contributing to campus-wide
                                 tech platforms. With a strong foundation in Python, C++, and JavaScript frameworks, I’m
                                 eager to bring thoughtful, efficient solutions to complex technical challenges.
                             </p>
