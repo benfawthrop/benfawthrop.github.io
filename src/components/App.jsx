@@ -6,6 +6,8 @@ import HamburgerMenu from './HamburgerMobile';
 import './App.css';
 import { FaGithub } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
             });
     };
 
+    // tracking section for section highlighting
     useEffect(() => {
         const hero = document.querySelector(".hero");
         const sections = document.querySelectorAll("section");
@@ -58,6 +61,15 @@ function App() {
         return () => observer.disconnect();
     }, []);
 
+    // scroll animations
+    useEffect(() => {
+        AOS.init({
+            duration: 500,
+            offset: 100,
+            easing: "ease-out"
+        });
+    }, []);
+
     return (
 
         <div className="app">
@@ -73,10 +85,10 @@ function App() {
             <Hero name="Ben Fawthrop" subtext={"4th Year CS Major @ RPI"} />
 
             <main className="content">
-                <section id="about" className="section about-grid">
+                <section id="about" className="section about-grid" data-aos="fade-up">
                     <h2>About Me</h2>
-                    <div className="about-container">
-                        <div className="about-text">
+                    <div className="about-container" data-aos="fade-up">
+                        <div className="about-text" data-aos="fade-up">
                             <p>I am a fourth-year Computer Science student at Rensselaer Polytechnic Institute (RPI),
                                 concentrating in Artificial Intelligence and Machine Learning. I enjoy building robust
                                 full-stack applications and developing algorithmic solutions to real-world problems.
@@ -88,7 +100,7 @@ function App() {
                                 eager to bring thoughtful, efficient solutions to complex technical challenges.
                             </p>
 
-                            <div className="tech-section">
+                            <div className="tech-section" data-aos="fade-up">
                                 <h3>Technologies I've Worked With Recently</h3>
                                 <ul className="tech-list">
                                     <li>Python</li>
@@ -102,7 +114,7 @@ function App() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="about-image">
+                        <div className="about-image" data-aos="fade-up">
                             <img
                                 // src="https://placehold.co/600x800"
                                 src={ process.env.PUBLIC_URL + "/images/profile.jpg" }
@@ -115,14 +127,14 @@ function App() {
                     </div>
                 </section>
 
-                <section id="experience" className="section">
+                <section id="experience" className="section" data-aos="fade-up">
                     <h2>Work Experience</h2>
-                    <div className="timeline-container">
-                        <div className="timeline">
+                    <div className="timeline-container" data-aos="fade-up">
+                        <div className="timeline" data-aos="fade-up">
 
                             {/* Professional Experience */}
-                            <div className="timeline-item">
-                                <div className="timeline-content">
+                            <div className="timeline-item" data-aos="fade-up">
+                                <div className="timeline-content" data-aos="fade-up">
                                     <h3>Tennis Coach & Racket Technician</h3>
                                     <div className="timeline-company">Enfield Tennis Club</div>
                                     <div className="timeline-date">2019 - 2023</div>
@@ -136,8 +148,8 @@ function App() {
                                 </div>
                             </div>
 
-                            <div className="timeline-item">
-                                <div className="timeline-content">
+                            <div className="timeline-item" data-aos="fade-up">
+                                <div className="timeline-content" data-aos="fade-up">
                                     <h3>Tennis Coach</h3>
                                     <div className="timeline-company">Tri-City Fitness</div>
                                     <div className="timeline-date">2024-2025</div>
@@ -148,8 +160,8 @@ function App() {
                                 </div>
                             </div>
 
-                            <div className="timeline-item">
-                                <div className="timeline-content">
+                            <div className="timeline-item" data-aos="fade-up">
+                                <div className="timeline-content" data-aos="fade-up">
                                     <h3>Food Runner/Expo</h3>
                                     <div className="timeline-company">Brown's Brewing Company</div>
                                     <div className="timeline-date">2025</div>
@@ -164,10 +176,10 @@ function App() {
                     </div>
                 </section>
 
-                <section id="projects" className="section">
+                <section id="projects" className="section" data-aos="fade-up">
                     <h2>Projects</h2>
-                    <div className="projects-container">
-                        <div className="project-card">
+                    <div className="projects-container" data-aos="fade-up">
+                        <div className="project-card" data-aos="fade-up">
                             <h3>C++ Wordsearch Board Generation</h3>
                             <div className="project-organization">Personal</div>
                             <p>Developed a recursive algorithm to generate possible word search boards of a given size
@@ -190,7 +202,7 @@ function App() {
                             </a>
                         </div>
 
-                        <div className="project-card">
+                        <div className="project-card" data-aos="fade-up">
                             <h3>Battery Model and LapSim</h3>
                             <div className="project-organization">Rensselaer Center for Open Source - Rensselaer Motorsport (RM)</div>
                             <p>Developed a Python-based simulation of a battery system for an electric vehicle, focusing
@@ -214,7 +226,7 @@ function App() {
                             </a>
                         </div>
 
-                        <div className="project-card">
+                        <div className="project-card" data-aos="fade-up">
                             <h3>Edureka Event Management Platform</h3>
                             <div className="project-organization">Rensselaer Center for Open Source - President's Office</div>
                             <p>Contributed to the development of Edureka, the ground truth event management system for RPI, designed for use by the President’s
@@ -240,7 +252,7 @@ function App() {
                             </a>
                         </div>
 
-                        <div className="project-card">
+                        <div className="project-card" data-aos="fade-up">
                             <h3>C Wordle Server with TCP Socket Connections</h3>
                             <div className="project-organization">Personal</div>
                             <p>Developed a Wordle game server in C, utilizing TCP socket connections to allow multiple users to connect and play
@@ -263,7 +275,7 @@ function App() {
                                 <FaGithub />
                             </a>
                         </div>
-                        <div className="project-card">
+                        <div className="project-card" data-aos="fade-up">
                             <h3>Object Detection System with Region Proposals</h3>
                             <div className="project-organization">Computational Vision Course Project</div>
                             <p>
@@ -295,7 +307,7 @@ function App() {
                                 <FaGithub />
                             </a>
                         </div>
-                        <div className="project-card">
+                        <div className="project-card" data-aos="fade-up">
                             <h3>This Website!</h3>
                             <div className="project-organization">Personal</div>
                             <p>
@@ -331,9 +343,9 @@ function App() {
                     </div>
                 </section>
 
-                <section id="contact" className="section">
+                <section id="contact" className="section" data-aos="fade-up">
                     <h2>Get in Touch</h2>
-                    <div className="contact-container">
+                    <div className="contact-container" data-aos="fade-up">
                         <form ref={form} className="contact-form" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <input
