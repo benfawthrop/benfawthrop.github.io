@@ -78,7 +78,6 @@ function App() {
                 Message sent successfully!
             </div>
             <HamburgerMenu />
-            <div className="mobile-menu-backdrop"></div>
 
             <Sidebar />
             <Navigation activeSection={activeSection} />

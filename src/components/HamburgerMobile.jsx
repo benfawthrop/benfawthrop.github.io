@@ -28,6 +28,14 @@ const HamburgerMenu = () => {
                 {isOpen ? <FiX /> : '☰'}
             </button>
 
+            {/* Backdrop */}
+            {isOpen && (
+                <div
+                    className="mobile-menu-backdrop"
+                    onClick={() => setIsOpen(false)}
+                ></div>
+            )}
+
             <div className={`mobile-nav-container ${isOpen ? 'open' : ''}`}>
                 <div className="mobile-nav-content">
                     <button onClick={scrollToTop} className="mobile-nav-item">
@@ -49,11 +57,21 @@ const HamburgerMenu = () => {
                     </button>
 
                     <div className="mobile-social-links">
-                        <a href="https://github.com/benfawthrop" target="_blank" rel="noopener noreferrer" className="mobile-nav-item">
+                        <a
+                            href="https://github.com/benfawthrop"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mobile-nav-item"
+                        >
                             <FaGithub className="icon" />
                             <span>GitHub</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/ben-fawthrop-798322271/" target="_blank" rel="noopener noreferrer" className="mobile-nav-item">
+                        <a
+                            href="https://www.linkedin.com/in/ben-fawthrop-798322271/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mobile-nav-item"
+                        >
                             <FaLinkedin className="icon" />
                             <span>LinkedIn</span>
                         </a>
